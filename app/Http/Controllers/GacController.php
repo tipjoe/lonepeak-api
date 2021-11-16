@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Gac;
+use App\Models\Gac;
 use Illuminate\Http\Request;
 
 class GacController extends Controller

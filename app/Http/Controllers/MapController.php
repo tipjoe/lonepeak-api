@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Referral;
-use App\Road;
+use App\Models\Referral;
+use App\Models\Road;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
