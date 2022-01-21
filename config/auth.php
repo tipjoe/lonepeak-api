@@ -40,11 +40,20 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'api' => [
-            'driver' => 'jwt',
-            'provider' => 'users',
-            'hash' => false,
-        ]
+        // This could be used for jwt tokens. We're using Sanctum that builds
+        // on the existing session ID/hash. This is considered 'stateful' since
+        // it depends on the server remembering data between requests.
+        //
+        // If you want to scale horizontally, a session ID on a single server
+        // becomes a problem as subsequent requests may be handled by a
+        // a different server. To solve, sessions either need to be centralized
+        // (redis or other shared location) or switch to a stateless approach
+        // like javascript web tokens (jwt) that contain the session info.
+        // 'api' => [
+        //     'driver' => 'jwt',
+        //     'provider' => 'users',
+        //     'hash' => false,
+        // ]
     ],
 
     /*
@@ -111,6 +120,7 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    // 'password_timeout' => 10800, // 3 hours
+    'password_timeout' => 31536000,    // 1 year
 
 ];

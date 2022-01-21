@@ -14,10 +14,10 @@ class UserController extends Controller
     /**
      * Get site users.
      *
-     * Currently getting all.
+     * Currently getting all for /admin/user/index member list.
      */
     public function index(Request $request) {
-        if ($request->user()->id == 1) {
+        // if ($request->user()->id == 1) {
             $orderBy = 'created_at';
             if ($request->order) {
                 $orderBy = $request->order;
@@ -25,12 +25,15 @@ class UserController extends Controller
 
             $users = User::whereNull('moved_out')->orderByDesc($orderBy)->get();
 
-            return view('user.index', [
-                'users' => $users,
-            ]);
-        } else {
-            return redirect('home');
-        }
+            return response()->json($users);
+
+            // Old blade response.
+            // return view('user.index', [
+            //     'users' => $users,
+            // ]);
+        // } else {
+        //     return redirect('home');
+        // }
     }
 
 

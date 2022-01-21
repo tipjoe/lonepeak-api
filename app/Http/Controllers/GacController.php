@@ -18,16 +18,6 @@ class GacController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Save individual give-a-craps.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -60,7 +50,7 @@ class GacController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get a single resource.
      *
      * @param  \App\Gac  $gac
      * @return \Illuminate\Http\Response

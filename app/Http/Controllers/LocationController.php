@@ -20,23 +20,12 @@ class LocationController extends Controller
                 locations.created_at, locations.geometry, locations.id,
                 locations.latitude, locations.longitude, locations.parcel,
                 locations.updated_at,
-                DATEDIFF(NOW(), MAX(gacs.created_at)) AS days_since_gac
-                AS is_connection'
+                DATEDIFF(NOW(), MAX(gacs.created_at)) AS days_since_gac'
             )
             ->leftJoin('gacs', 'locations.id', 'gacs.location_id')
             ->groupBy('locations.id');
 
         return response()->json($locations->get());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -51,23 +40,12 @@ class LocationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get a single resource.
      *
      * @param  \App\Location  $location
      * @return \Illuminate\Http\Response
      */
     public function show(Location $location)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Location  $location
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Location $location)
     {
         //
     }

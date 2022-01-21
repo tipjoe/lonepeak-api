@@ -32,18 +32,6 @@ class NoteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-
-
-    /**
      * Save a note.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -77,23 +65,12 @@ class NoteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get a single resource.
      *
      * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
     public function show(Note $note)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Note  $note
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Note $note)
     {
         //
     }
