@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +20,7 @@ class SplitNameInUsers extends Migration
                 // Couple name.
                 $item->first = $name[0] . " " . $name[1] . " " . $name[2];
                 $item->last = $name[3];
-            } elseif (count($name) > 2){
+            } elseif (count($name) > 2) {
                 // Has middle name.
                 $item->first = $name[0];
                 $item->middle = $name[1];

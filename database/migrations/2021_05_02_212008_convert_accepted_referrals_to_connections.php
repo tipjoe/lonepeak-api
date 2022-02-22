@@ -1,7 +1,7 @@
 <?php
 
-use App\Referral;
-use App\User;
+use App\Models\Referral;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,7 +17,7 @@ class ConvertAcceptedReferralsToConnections extends Migration
     public function up()
     {
         $referrals = Referral::whereNotNull('redeemed')->get();
-        foreach($referrals as $r) {
+        foreach ($referrals as $r) {
             // Get the referring user.
             $referrer = $r->user;
 
