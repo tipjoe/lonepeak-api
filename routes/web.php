@@ -39,7 +39,7 @@ Route::get('/road', [RoadController::class, 'index'])->name('road.index');
 
 // TODO: move these to group model/controller since they should be relations on
 // the parent (all neighborhood) group.
-Route::get('/members', [UserController::class, 'getMembers'])->name('user.getMembers');
+Route::get('/members', [UserController::class, 'getUserConnections'])->name('user.getMembers');
 Route::get('/note', [NoteController::class, 'index'])->name('note.index');
 Route::get('/friends', [UserController::class, 'getFriends'])->name('user.getFriends');
 
@@ -55,7 +55,7 @@ Route::prefix('admin')->group(function () {
 });
 
 // Get by ID or currently authenticated user.
-Route::get('/user/{id?}', [UserController::class, 'show'])->name('user.get');
+Route::get('/user/{id?}', [UserController::class, 'get'])->name('user.get');
 Route::put('/user/{id?}/update', [UserController::class, 'update'])->name('user.update');
 Route::get('/user/{id?}photo/delete', [UserController::class, 'destroyPhoto'])->name('user.photo.delete');
 
