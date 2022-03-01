@@ -39,9 +39,9 @@ Route::get('/road', [RoadController::class, 'index'])->name('road.index');
 
 // TODO: move these to group model/controller since they should be relations on
 // the parent (all neighborhood) group.
-Route::get('/members', [UserController::class, 'getUserConnections'])->name('user.getMembers');
+Route::get('/members', [UserController::class, 'getMembers'])->name('user.getMembers');
 Route::get('/note', [NoteController::class, 'index'])->name('note.index');
-Route::get('/friends', [UserController::class, 'getFriends'])->name('user.getFriends');
+Route::get('/friends', [UserController::class, 'getUserConnections'])->name('user.getFriends');
 
 Route::post('/note', [NoteController::class, 'store'])->name('note.store');
 Route::post('/gac', [GacController::class, 'store'])->name('gac.store');
