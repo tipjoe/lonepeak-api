@@ -1,4 +1,5 @@
 # For more information: https://laravel.com/docs/sail
+# ONLY DIFF HERE is mapped mysql port.
 version: '3'
 services:
     api:
@@ -26,7 +27,7 @@ services:
     mysql:
         image: 'mysql:8.0'
         ports:
-            - '${FORWARD_DB_PORT:-3306}:3306'
+            - '${FORWARD_DB_PORT:-3308}:3306'
         environment:
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ROOT_HOST: '%'
