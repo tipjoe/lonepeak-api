@@ -8,14 +8,13 @@ use Illuminate\Http\Request;
 class LocationController extends Controller
 {
     /**
-     * Get a list of locations.
+     * Get a list of locations (full data with geo-info) with days since
+     * last GAC. Used for Give-a-Crap Map with colors.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // return response()->json(Location::limit(10)->get());
-
         $locations = Location::selectRaw('locations.address1, locations.address2,
                 locations.created_at, locations.geometry, locations.id,
                 locations.latitude, locations.longitude, locations.parcel,
@@ -27,6 +26,18 @@ class LocationController extends Controller
 
         return response()->json($locations->get());
     }
+
+    /**
+     * Get a list of location IDs and addresses (address1).
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addresses()
+    {
+        $locations = Location::select('id', 'address1')->get();
+        return response()->json($locations);
+    }
+
 
     /**
      * Store a newly created resource in storage.
