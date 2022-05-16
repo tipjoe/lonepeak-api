@@ -21,10 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 // Using web routes for api with Sanctum to utilize session tokens.
 
-/** Old Authentication **/
-// Auth::routes(['verify' => true]);
-// Route::get('/logout', 'Auth\LoginController@logout');
-
 // Give-a-crap map.
 // @deprecated
 // We're still using locations to ensure new members live here and to be able
@@ -57,6 +53,10 @@ Route::post('/create-referral-url', [ReferralController::class, 'createReferralU
 Route::prefix('admin')->group(function () {
     Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
 });
+
+/** Old Authentication **/
+// Auth::routes(['verify' => true]);
+// Route::get('/logout', 'Auth\LoginController@logout');
 
 // Get by ID or currently authenticated user.
 Route::get('/user/{id?}', [UserController::class, 'show'])->name('user.get');

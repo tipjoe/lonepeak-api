@@ -20,6 +20,7 @@ use App\Http\Controllers\AuthController;
 //     return $request->user();
 // });
 
+// Legacy routes used by previous site via AuthController. Here for reference.
 // Route::group([
 //     'middleware' => 'api',
 //     'prefix' => 'auth'

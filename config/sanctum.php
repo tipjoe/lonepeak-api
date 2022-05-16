@@ -1,5 +1,6 @@
 <?php
-
+// Good diagram of sanctum SPA Authentication process:
+// https://dev.to/nicolus/laravel-sanctum-explained-spa-authentication-45g1
 return [
 
     /*

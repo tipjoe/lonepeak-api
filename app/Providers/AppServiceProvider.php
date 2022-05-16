@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Ignore Sanctum migrations.
+        // Ignore Sanctum migrations since we're using the SPA authentication
+        // feature that uses Laravel's cookie-based session authentication
+        // instead of API tokens.
         Sanctum::ignoreMigrations();
     }
 
